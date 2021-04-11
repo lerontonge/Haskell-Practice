@@ -74,19 +74,11 @@ newCoinAgain = magicCoin newCoin
 newCoinAgain' :: Bool
 newCoinAgain' = magicCoin(magicCoin False)
 
-{- magicBool :: Bool (Bool->Bool)
-magicBool = \_ magicCoin -}
+magicBool :: Bool -> Bool -> Bool
+magicBool = \_ -> magicCoin
 
--- *************************************************************************--
-
-f :: Integer -> Integer
-f x = x + 1
-
- -- (\x y z -> (2 * \x+y * z))
-
--- (\xs -> xs + 1)--Simpler
-
--- OR
+add :: Integer -> Integer
+add x = x + 1
 
 f' :: Integer -> Integer -> Integer -> Integer
 f' x y z = 2 * x + y * z
