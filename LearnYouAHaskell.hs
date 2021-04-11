@@ -54,10 +54,6 @@ printFunc = print factorial
 
 -- *****************************************************************************
 
--- \_ -> True :: Bool -> Bool
--- (\_ -> \_ + 1) :: Int -> Int\
-
-
 
 magicCoin :: Bool -> Bool
 magicCoin = \_ -> True
@@ -81,10 +77,51 @@ add :: Integer -> Integer
 add x = x + 1
 
 f' :: Integer -> Integer -> Integer -> Integer
-f' x y z = 2 * x + y * z
+
+f' = \x -> \y -> \z -> 2 * x + y * z
 
 f'' :: Integer -> Integer
 f'' xa = xa + 1
 
+--Using One Lambda
+f1' :: Int -> Int -> Int -> Int 
+f1' = \x y z -> 2*x + y*z 
 
--- 
+f1'' :: Int -> Int -> Int -> Int 
+f1'' x y z = 2*x + y*z
+
+
+height :: Float 
+height = 5.5
+
+weight :: Float 
+weight = 140
+
+isHeight :: Bool
+isHeight = height >= 5.5
+
+isWeight :: Bool 
+isWeight = weight >= 160
+
+rideRollercoaster :: IO() 
+rideRollercoaster = if isHeight && isWeight
+                    then putStrLn "You Can Ride"
+                    else putStrLn "You Cannot Ride"
+           
+--5.2
+
+plus :: Int -> Int -> Int
+plus x y = x + y
+
+plus' :: Int -> Int -> Int
+plus' = \x -> \y -> x+y
+
+increment :: Int -> Int
+increment = plus 1
+
+increment' :: Int -> Int 
+increment' = (\x -> \y -> x+y) 1
+
+addResult :: Int 
+addResult = plus 100 25 
+
