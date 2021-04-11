@@ -21,10 +21,10 @@ plus6'' number = (6+) number
 plusSeven :: Int -> Int 
 plusSeven = (+7)
 
-sumFrom1To :: Integral => a -> a
+sumFrom1To :: Integral a => a -> a
 sumFrom1To 0 = 0
 sumFrom1To n = n + sumFrom1To(n-1)
 
 isEven :: Integral a => a -> Bool
-isEven n = mod n 2 == 0 
-_
+isEven n = mod n 2 == 0
+
