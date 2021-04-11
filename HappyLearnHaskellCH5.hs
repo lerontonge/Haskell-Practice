@@ -21,3 +21,4 @@ magicBool' = \_ -> \_ -> True
 
 magicBool'' :: Bool -> Bool -> Bool 
 magicBool'' _ _ = True 
+
