@@ -43,13 +43,19 @@ result = fromIntegral intFive + floatTenPointThree
 message :: String -> String 
 message name =
     case name of 
-        "Dave" -> "I can't do that"
-        "Sam" -> "Play it again"
-        _ -> "Hello There"
+    "Dave" -> "I can't do that"
+    "Sam" -> "Play it again"
+    _ -> "Hello There" 
 
 main :: IO()
 main = putStrLn (message "Dave")
 
 
-    
+name :: String 
+name = "Dave"
 
+{-message' :: String -> String 
+message' name 
+    | name == "Dave" = "I Cant Do That"
+    | name == "Sam" = "Play It Again"
+    | otherwise "Hello There"-}

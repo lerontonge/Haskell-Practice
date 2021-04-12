@@ -17,12 +17,15 @@ doubleUs' x y = doubleMe x + doubleMe y
 
 -- **************************************************************************
 
+a :: Int
 a = 1235 :: Int
+b :: Int
 b = 1234 :: Int
 
 isEqual :: Bool
 isEqual = a == b
 
+xs :: Bool
 xs = isEqual
 
 addOrMul :: Int
@@ -114,7 +117,7 @@ plus :: Int -> Int -> Int
 plus x y = x + y
 
 plus' :: Int -> Int -> Int
-plus' = \x -> \y -> x+y
+plus' = \x y -> x+y
 
 increment :: Int -> Int
 increment = plus 1
@@ -124,4 +127,5 @@ increment' = (\x -> \y -> x+y) 1
 
 addResult :: Int 
 addResult = plus 100 25 
+
 
