@@ -21,10 +21,35 @@ plus6'' number = (6+) number
 plusSeven :: Int -> Int 
 plusSeven = (+7)
 
-sumFrom1To :: Integral a => a -> a
+sumFrom1To :: Int -> Int 
 sumFrom1To 0 = 0
 sumFrom1To n = n + sumFrom1To(n-1)
 
-isEven :: Integral a => a -> Bool
+isEven :: Int -> Bool
 isEven n = mod n 2 == 0
+
+intFive :: Int 
+intFive = 5
+
+floatTenPointThree :: Float 
+floatTenPointThree = 10.3
+
+-- Error Because not the same type
+--errorResult = intFive + floatTenPointThree
+
+result = fromIntegral intFive + floatTenPointThree
+
+
+message :: String -> String 
+message name =
+    case name of 
+        "Dave" -> "I can't do that"
+        "Sam" -> "Play it again"
+        _ -> "Hello There"
+
+main :: IO()
+main = putStrLn (message "Dave")
+
+
+    
 
