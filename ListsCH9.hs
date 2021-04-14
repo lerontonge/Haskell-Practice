@@ -33,6 +33,9 @@ main :: IO()
 main = print shoppingList
 
 
+main'' :: IO ()
+main'' = print (show(length shoppingList))
+
 aList9 :: [] String 
 aList9 = ["Cat","Food","Lasagne"]
 
