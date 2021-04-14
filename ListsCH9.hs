@@ -10,7 +10,8 @@ aList = []
 aList2 = "sauce" : []
 
 -- A list with the : used a prefix
-alist3 = (:) "pie" []
+aList3 :: [[Char]]
+aList3 = (:)"pie" []
 
 --The usual way to make a list
 aList4 :: [String]
@@ -30,6 +31,18 @@ shoppingList = ["Carrots"
 
 main :: IO()
 main = print shoppingList
+
+
+aList9 :: [] String 
+aList9 = ["Cat","Food","Lasagne"]
+
+main' :: IO()
+main' = print (aList9 ++ shoppingList)
+
+lists :: [String]
+lists = aList9 ++ aList4 ++ aList3
+
+
 
 
 
