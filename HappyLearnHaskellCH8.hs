@@ -38,5 +38,19 @@ message'' name =
 main :: IO()
 main = putStrLn (message name ++ message' "Sam" ++ message'' name )
 
+addThem :: Int -> Int -> Int -> Int -> Int 
+addThem a b c d = a + b + c + d
+
+addThemOne :: Int -> Int -> Int -> Int 
+addThemOne = addThem 1 
+
+addThemOneToTwo :: Int -> Int -> Int 
+addThemOneToTwo = addThemOne 2
+
+addThemOneToThree :: Int -> Int 
+addThemOneToThree = addThemOneToTwo 3
+
+addThemOneToFour :: Int 
+addThemOneToFour = addThemOneToThree 4
 
 
