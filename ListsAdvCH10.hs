@@ -22,9 +22,12 @@ isGood _     = False
 
 assess :: String -> String 
 assess movie = movie ++ " - " ++ assessment 
-where assessment if isGood movie
+
+  where assessment = if isGood movie
                        then "Good"
                        else "Bad" 
+        movieIsGood = isGood movie
+
 
 assessMovies :: [String] -> [String]
 assessMovies = map assess
