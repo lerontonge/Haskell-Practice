@@ -18,14 +18,13 @@ movies =
 
 isGood :: String -> Bool 
 isGood (x:_) = x <= 'M'
-isGood _     = False 
+isGood _ = False 
 
 assess :: String -> String 
-assess movie = movie ++ " - " ++ assessment 
-
-  where assessment = if isGood movie
-                       then "Good"
-                       else "Bad" 
+assess movie = movie ++ " - " ++ assessment
+  where assessment  = if movieIsGood 
+                     then "Good"
+                     else "Bad"
         movieIsGood = isGood movie
 
 
@@ -34,8 +33,5 @@ assessMovies = map assess
 
 assessedMovies :: [String]
 assessedMovies = assessMovies movies
-
-
-
 
 
