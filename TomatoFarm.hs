@@ -1,9 +1,9 @@
 module TomatoFarm where
  
- import qualified Data.List as L 
+import qualified Data.List as L 
 
- strains :: [String]
- strains = ["Indica - Purple Punch",
+strains :: [String]
+strains = ["Indica - Purple Punch",
             "Indica - Grandaddy Purple",
             "Indica - White Rhino",
             "Indica - Bubba Kush",
@@ -18,30 +18,73 @@ module TomatoFarm where
             "Hybrid - Blue Dream",
             "Hybrid - Runtz",
             "Hybrid - Gelato"]
- {- THIS CAN BE WRITTEN MORE EFFICIENTLY 
-    isIndica :: String -> Bool 
-    isIndica (s:_) = s == 'I'
-    isIndica _ = False   
+ -- THIS CAN BE WRITTEN MORE EFFICIENTLY 
 
-    isSativa :: String -> Bool 
-    isSativa (s':_) = s' == 'S'
-    isSativa _ = False 
+isIndica :: String -> Bool 
+isIndica (i:_) = i == 'I'
+isIndica _ = False   
 
-    isHybrid :: String -> Bool 
-    isHybrid (s'':_) = s'' == 'H'
-    isHybrid _ = False -}
+isSativa :: String -> Bool 
+isSativa (s:_) = s == 'S'
+isSativa _ = False 
 
- isStrain :: String -> Bool 
- isStrain (x:_)  
+isHybrid :: String -> Bool 
+isHybrid (h:_) = h == 'H'
+isHybrid _ = False 
+
+{- isStrain :: String -> Bool 
+isStrain (x:_)  
                   |x == 'S' = True
                   |x == 'I' = True
                   |x == 'H' = True
-                  |otherwise   = False 
+                  |otherwise   = False -}
 
-{- Type Declarations
+isTypeIndica :: String -> String
+isTypeIndica strain  = strain ++ " - " ++ isFor 
+                    where isFor = if isType
+                                      then "Is for Sleepy Time"
+                                      else "Is Not for Sleepy Time"
+                          isType = isIndica strain 
+
+isTypeSativa :: String -> String
+isTypeSativa strain  = strain ++ " - " ++ isFor 
+                    where isFor = if isType
+                                      then "Is for Happy Time"
+                                      else "Is Not for Happy Time"
+                          isType = isSativa strain 
+
+isTypeHybrid :: String-> String
+isTypeHybrid strain  = strain ++ " - " ++ isFor 
+                    where isFor = if isType
+                                      then "Is for Mellow Time"
+                                      else "Is Not for Mellow Time"
+                          isType = isHybrid strain 
 
 
- isSativa = True 
- isHybrid = True 
- isIndica = True -}
+
+isIndicaType :: [String] -> [String]
+isIndicaType = map isTypeIndica
+
+isSativaType :: [String] -> [String]
+isSativaType = map isTypeSativa
+
+isHybridType :: [String] -> [String]
+isHybridType = map isTypeHybrid
+
+
+
+indica :: [String]
+indica = isIndicaType strains 
+
+sativa :: [String]
+sativa = isSativaType strains
+
+hybrid :: [String]
+hybrid = isHybridType strains
+
+main :: IO ()
+main = putStrLn (L.intercalate "\n" indica)
+
+
+
 
