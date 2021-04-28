@@ -39,3 +39,5 @@ main = putStrLn stringToPrint
     where   
         stringToPrint = L.intercalate ", " advices
         advices = adviceOnZooEscape localZoo
+
+        
