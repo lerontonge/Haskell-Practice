@@ -2,6 +2,14 @@ module TomatoFarm where
  
 import qualified Data.List as L 
 
+data StrainType = Indica 
+                | Sativa 
+                | Hybrid 
+                | Ruderalis
+
+                
+
+
 strains :: [String]
 strains = ["Indica - Purple Punch",
             "Indica - Grandaddy Purple",
@@ -81,6 +89,8 @@ sativa = isSativaType strains
 
 hybrid :: [String]
 hybrid = isHybridType strains
+
+
 
 main :: IO ()
 main = putStrLn (L.intercalate "\n" indica)
