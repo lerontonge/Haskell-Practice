@@ -43,5 +43,5 @@ street =
 getCatFromHouse :: House -> Cat
 getCatFromHouse (House _ c) = c  
 
-getHumanAgeFromCat :: House -> Age
-getHumanAgeFromCat = humanAge . getCatFromHouse
+getHumanAgeOfCatFromHouse :: House -> Age
+getHumanAgeOfCatFromHouse = humanAge . getCatFromHouse
