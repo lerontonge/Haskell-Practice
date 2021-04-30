@@ -7,6 +7,9 @@ data StrainType = Indica
                 | Hybrid 
                 | Ruderalis
 
+data FloweringType = Photoperiod
+                   | AutoFlower                
+
                 
 
 
