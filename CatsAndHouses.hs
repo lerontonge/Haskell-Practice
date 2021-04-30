@@ -15,8 +15,6 @@ data CatBreed = Siamese
 type Name = String
 type Age = Integer
 data Cat = Cat Name CatBreed Age
-
-
 type HouseNumber = Int
 data House = House HouseNumber Cat
 
@@ -41,7 +39,22 @@ street =
     , House 10 (Cat " Crazy Ears Sam" CornishRex 3) ]
 
 getCatFromHouse :: House -> Cat
-getCatFromHouse (House _ c) = c  
+getCatFromHouse (House _ cat) = cat  
 
 getHumanAgeOfCatFromHouse :: House -> Age
 getHumanAgeOfCatFromHouse = humanAge . getCatFromHouse
+
+findOldestCat :: [House] -> Maybe Cat
+findOldestCat []        = Nothing 
+findOldestCat houses    = Just oldestCat 
+    where
+        oldestCat = getCatFromHouse houseWithOldestCat 
+
+        houseWithOldestCat = head housesSortedByCatAge
+
+        housesSortedByCatAge = L.sortBy catAgeComparer houses
+
+        catAgeComparer (House _ (Cat _ _ age1))
+                       (House _ (Cat _ _ age2)) 
+                       = compare age2 age1
+                       
