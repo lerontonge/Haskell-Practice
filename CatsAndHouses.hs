@@ -46,15 +46,47 @@ getHumanAgeOfCatFromHouse = humanAge . getCatFromHouse
 
 findOldestCat :: [House] -> Maybe Cat
 findOldestCat []        = Nothing 
-findOldestCat houses    = Just oldestCat 
+findOldestCat houses    = maybeOldestCat
     where
-        oldestCat = getCatFromHouse houseWithOldestCat 
+        maybeOldestCat
+            = case findOldestCatHouse houses of 
+                Just house -> 
+                    Just (getCatFromHouse house)
+                Nothing ->
+                    Nothing     
 
-        houseWithOldestCat = head housesSortedByCatAge
+findOldestCatHouse :: [House] -> Maybe House
+findOldestCatHouse houses = 
+    if length housesSortedByCatAge > 0
+    then Just (head housesSortedByCatAge)
+    else Nothing
+   where housesSortedByCatAge 
+            = L.sortBy catAgeComparer houses
+         catAgeComparer (House _ (Cat _ _ age1))
+                        (House _ (Cat _ _ age2))
+                 = compare age2 age1
 
-        housesSortedByCatAge = L.sortBy catAgeComparer houses
+getCatName :: Cat -> String
+getCatName (Cat name _ _) = name 
 
-        catAgeComparer (House _ (Cat _ _ age1))
-                       (House _ (Cat _ _ age2)) 
-                       = compare age2 age1
-                       
+getHouseNumber :: House -> String 
+getHouseNumber (House num _) = show num 
+
+main :: IO()
+main = putStrLn oldest 
+    where
+        oldest = 
+            case findOldestCatHouse street of
+                Nothing -> 
+                    "There is no oldest cat!"
+                Just house -> 
+                    "The oldest cat is " 
+                    ++ getCatName (getCatFromHouse house) 
+                    ++ ", is "
+                    ++ show (getHumanAgeOfCatFromHouse house)
+                    ++ " equivalent human years old"
+                    ++ " and it lives in Number "
+                    ++ getHouseNumber house
+
+
+
