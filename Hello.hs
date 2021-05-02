@@ -109,6 +109,18 @@ printAgeproduct :: IO()
 printAgeproduct = print myAgeXMomsAge
 
 
+addition :: Int 
+addition = 5+7+8+9
+
+printAddition :: IO()
+printAddition = print addition
+
+subtraction :: Int 
+subtraction = 1098 - 999
+
+printSubtraction :: IO()
+printSubtraction = print subtraction
+
 
 
 
