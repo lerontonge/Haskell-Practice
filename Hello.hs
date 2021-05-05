@@ -121,19 +121,12 @@ subtraction = 1098 - 999
 printSubtraction :: IO()
 printSubtraction = print subtraction
 
+plateNum :: [Int]
+plateNum = [123,456,789,012,345,678,901,234,567,890]
 
-
-
-
-
-
-
-
-
-
-
-
-
+addNums ::  [Int] -> Int 
+addNums  [] = 0
+addNums (x:xs) = x + addNums xs
 
 
 
