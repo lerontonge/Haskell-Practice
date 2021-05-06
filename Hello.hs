@@ -130,9 +130,12 @@ addNums (x:xs) = x + addNums xs
 
 
 
+addedNums :: Int
+addedNums = addNums plateNum 
 
 
-
+printAddedNums :: IO()
+printAddedNums = print addedNums 
 
 
 
