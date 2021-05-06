@@ -121,6 +121,8 @@ subtraction = 1098 - 999
 printSubtraction :: IO()
 printSubtraction = print subtraction
 
+--FUNCTION TO ADD A LIST OF INTEGERS
+
 plateNum :: [Int]
 plateNum = [123,456,789,012,345,678,901,234,567,890]
 
@@ -138,11 +140,15 @@ printAddedNums :: IO()
 printAddedNums = print addedNums 
 
 
-
-
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-- ANOTHER WAY
+plates :: Integer
 plates = 123 + 2656 + 56983 + 6384
+plate2 :: Integer
 plate2 = 345
+plate3 :: Integer
 plate3 = 433
+plate4 :: Integer
 plate4 = 983
 
 
@@ -150,13 +156,15 @@ plate4 = 983
 
 
 
+addedPlates :: Integer
 addedPlates = plates + plate2 + plate3 + plate4
 
 
 
+printPlates :: Integer
 printPlates = addedPlates 
 
-
+-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
