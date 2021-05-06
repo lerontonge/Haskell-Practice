@@ -20,10 +20,10 @@ main = do
             putStrLn "You Die."
         "_" -> 
             putStrLn "Did not understand"
-    putStrLn "Play Again? write y if you do"
+    putStrLn "Play Again? write 'y' if you do"
     playAgain <- getLine
     if playAgain == "y"
     then main
     else putStrLn "thanks for playing"
 
-    
+

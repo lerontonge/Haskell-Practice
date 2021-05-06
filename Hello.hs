@@ -140,6 +140,25 @@ printAddedNums = print addedNums
 
 
 
+plates = 123 + 2656 + 56983 + 6384
+plate2 = 345
+plate3 = 433
+plate4 = 983
+
+
+
+
+
+
+addedPlates = plates + plate2 + plate3 + plate4
+
+
+
+printPlates = addedPlates 
+
+
+
+
 
 
 
