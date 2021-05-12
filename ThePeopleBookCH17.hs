@@ -57,7 +57,8 @@ peopleThatBeginWithL'= makeNewListWithOnlyLPeople people
 
 firstLetterIs :: Char -> String -> Bool 
 firstLetterIs c "" = False 
-firstLetterIs c (x:_) = c == x
+firstLetterIs c (x:_) = testf
+   where testf = c == x
 
 firstNameBeginsWith :: Char -> Person -> Bool 
 firstNameBeginsWith c p = 
