@@ -68,3 +68,11 @@ firstNameBeginsWith c p =
 peopleThatBeginWithL :: [Person]
 peopleThatBeginWithL = filter (firstNameBeginsWith 'L') people
 
+peopleToFirstName :: [Person] -> [String]
+peopleToFirstName [] = []
+peopleToFirstname (x:xs) = personFirstName x : peopleToFirstName xs
+
+firstNames :: [String]
+firstNames = map personFirstName people 
+
+
