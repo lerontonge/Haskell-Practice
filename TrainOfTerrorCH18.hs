@@ -68,3 +68,6 @@ trainLoop remainingLevels @ (currentLevel : levelsAfterThisOne) =
             _ -> do
                 putStrLn "Thant makes no sense"
                 trainLoop remainingLevels 
+
+
+
