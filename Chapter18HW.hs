@@ -14,21 +14,21 @@ currYear = 2021
 
 main :: IO()
 main = do
-    --if currMonth >= 12 then do 
+    --getting input from the user
     putStrLn "Enter Your Birth Year"
     yearofBirth <- getLine
-    putStrLn "Enter your birth Month"
+    putStrLn "Enter your Birth Month"
     monthOfBirth <-getLine 
     --Turning string input into integers
-    let birthMonth = (read monthOfBirth ::Int)
-    let birthYear = (read yearofBirth :: Int)
-    
+    let birthMonth = read monthOfBirth ::Int
+    let birthYear  = read yearofBirth :: Int
+
     --calculate Age by accuracy of Month
     if birthMonth >= currMonth 
     then do 
-        let currAge = currYear - birthYear 
+        let currAge = currYear - 1 - birthYear 
         putStrLn $ "Your Age Is: " ++ show currAge 
     else do
-        let currAge = currYear - 1 - birthYear
+        let currAge = currYear - birthYear
         putStrLn $ "Your Age Is: " ++ show currAge 
 
