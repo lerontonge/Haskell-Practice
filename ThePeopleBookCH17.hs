@@ -119,3 +119,5 @@ earliestYearOfBirth people = minimum $ map yearOfBirth people
 bornFirst :: [Person] -> Person
 bornFirst = L.minimumBy compareBirthYears
   where compareBirthYears x y = compare (yearOfBirth x) (yearOfBirth y)
+
+
