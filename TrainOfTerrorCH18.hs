@@ -39,9 +39,9 @@ trainLoop remainingLevels @ (currentLevel : levelsAfterThisOne) =
         let currentLevelNumber = levelNumber remainingLevels
             (num1,num2) = currentLevel
         
-        putStrLn $ "You Are In A Train Carriage"
+        putStrLn $ "You Are In Train Carriage "
                     ++ show currentLevelNumber
-                    ++ "of" ++ (show $ length levels)
+                    ++ " of " ++ (show $ length levels)
         putStrLn "Do You Want To: "
         putStrLn "1. Go to the next Carriage?"
         putStrLn "2. Jump out of the train"
@@ -53,7 +53,7 @@ trainLoop remainingLevels @ (currentLevel : levelsAfterThisOne) =
                 do
                     putStrLn $ "You try to go to the next carriage." ++ " The door is locked."
                     putStrLn "Answer this question to unlock the door: "
-                    putStrLn $ "What is " ++ show num1 ++ show num2 ++ "?"
+                    putStrLn $ "What is " ++ show num1 ++" times "++ show num2 ++ "?"
                     answer <- getLine
                     if answer == (show $ num1 * num2)
                         then do 
