@@ -58,14 +58,14 @@ makeNewListWithOnlyLPeople' = filter firstNameBeginsWithL
 peopleThatBeginWithL' :: [Person]
 peopleThatBeginWithL'= makeNewListWithOnlyLPeople people
 
-firstLetterIs :: Char -> String -> Bool 
-firstLetterIs c "" = False 
+firstLetterIs :: Char -> String -> Bool
+firstLetterIs c "" = False
 firstLetterIs c (x:_) = testf
    where testf = c == x
 
-firstNameBeginsWith :: Char -> Person -> Bool 
-firstNameBeginsWith c p = 
-     firstLetterIs c firstName 
+firstNameBeginsWith :: Char -> Person -> Bool
+firstNameBeginsWith c p =
+     firstLetterIs c firstName
    where firstName = personFirstName p
 
 peopleThatBeginWithL :: [Person]
@@ -84,7 +84,7 @@ lastNames = map personLastName people
 --getting a list of last lastNames
 
 firstNames :: [String]
-firstNames = map personFirstName people 
+firstNames = map personFirstName people
 
 --sorting a list in alphabetical order
 
@@ -100,18 +100,22 @@ reverseSortedLastNames = L.sortBy reverseCompare lastNames
 -- Sorting the list by a field in the list using ( SortOn )
 
 sortedPeopleByFirstNames :: [Person]
-sortedPeopleByFirstNames = L.sortOn personFirstName people 
+sortedPeopleByFirstNames = L.sortOn personFirstName people
 
 -- Function that takes a year and a person and works out how many years ago from that year that person was born
 
-yearsSinceBirthYear :: Year -> Person -> Int 
-yearsSinceBirthYear currYear person = currYear - yearOfBirth person 
+yearsSinceBirthYear :: Year -> Person -> Int
+yearsSinceBirthYear currYear person = currYear - yearOfBirth person
 
 -- Mapping the list 'people' to prior function
 wasBornYearsAgo :: [Int]
-wasBornYearsAgo = map (yearsSinceBirthYear 2021) people 
+wasBornYearsAgo = map (yearsSinceBirthYear 2021) people
 
 
 earliestYearOfBirth :: [Person] -> Int
-earliestYearOfBirth people = minimum $ map yearOfBirth people 
+earliestYearOfBirth people = minimum $ map yearOfBirth people
 
+
+bornFirst :: [Person] -> Person
+bornFirst = L.minimumBy compareBirthYears
+  where compareBirthYears x y = compare (yearOfBirth x) (yearOfBirth y)
