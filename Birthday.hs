@@ -27,6 +27,24 @@ main = do
      
     birthday dayOfB monthOfB yearOfB
 
-birthday :: Day -> Month -> Year -> IO()
-birthday d m y = print $ "Your Date of Birth Is " ++ show d ++ " " ++  show m ++ " " ++ show y 
+    addition 
 
+birthday :: Day -> Month -> Year -> IO()
+birthday d m y = 
+    do 
+        print $ "Your Date of Birth Is " ++ show d ++ " " ++  show m ++ " " ++ show y 
+        putStrLn "End Program"
+
+
+addition :: IO()
+addition = do
+    putStrLn "Input First Num: "
+    n1 <- getLine
+    putStrLn "Input Secon Num: "
+    n2 <- getLine
+
+    let num1 = read n1 :: Int
+    let num2 = read n2 :: Int
+    let added = num1 + num2 :: Int
+
+    putStrLn $ show num1 ++ " Plus " ++ show num2 ++ " equals " ++ show added
