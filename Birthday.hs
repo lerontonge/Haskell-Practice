@@ -40,11 +40,11 @@ addition :: IO()
 addition = do
     putStrLn "Input First Num: "
     n1 <- getLine
-    putStrLn "Input Secon Num: "
+    putStrLn "Input Second Num: "
     n2 <- getLine
 
     let num1 = read n1 :: Int
     let num2 = read n2 :: Int
     let added = num1 + num2 :: Int
 
-    putStrLn $ show num1 ++ " Plus " ++ show num2 ++ " equals " ++ show added
+    putStrLn $ show num1 ++ " plus " ++ show num2 ++ " equals " ++ show added
