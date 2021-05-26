@@ -1,33 +1,37 @@
 module Speller where
-import Data.List ( intercalate ) 
+import Data.List as L ( intercalate )
 
 wordList :: [[Char]]
-wordList  = ["Apple", "Ball", "Cat", "Duck"]
-
-getFirstLetter :: [[Char]] -> [Char]
-getFirstLetter [[]] = []
-getFirstLetter [] = ""
-getFirstLetter (x:xs) = word x : getFirstLetter xs
-                       where word = head 
-
-wordLst :: [[Char]] -> [Char]
-wordLst [c] = c 
+wordList  = ["Apple", "Ball", "Cat", "Duck", "Egg"]
 
 firstLetter :: [Char]
-firstLetter = map head wordList 
+firstLetter = map head wordList
 
 
-exPeriment :: [Char]
-exPeriment  =  getFirstLetter wordList 
+wordListtoString :: [Char] -> [String]
+wordListtoString = map (: [])
 
 
-printLetters :: [Char] -> [Char]
-printLetters (x:xs) = x : printLetters xs
+charToString :: [String]
+charToString = wordListtoString firstLetter 
 
-                        
-speller :: [Char] -> [Char]
-speller (x:xs) = x : speller xs 
+listOfCharsToString :: [[Char]] -> [String]
+listOfCharsToString  [[]] = [""]
+listOfCharsToString  (x:xs) = x : listOfCharsToString xs
 
---newWordList :: [Char]
--]=newWordList = intercalate " is for " wordList
 
+newWordList :: [String]
+newWordList = listOfCharsToString wordList
+
+
+combineLists :: [(String, String)]
+combineLists = zip charToString newWordList
+
+printList xs = mapM_ (\(a,b) -> do
+                          putStr a
+                          putStrLn ( " is for "  ++  b)
+                          ) xs
+
+main :: IO ()
+main = do
+    printList combineLists 
