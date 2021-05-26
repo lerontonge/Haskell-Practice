@@ -1,35 +1,39 @@
 module Speller where
 import Data.List as L ( intercalate )
 
-wordList :: [[Char]]
-wordList  = ["Apple", "Ball", "Cat", "Duck", "Egg"]
+speller :: [[Char]]
+speller  = ["Apple", "Ball", "Cat", "Duck", "Egg"]
+
 
 firstLetter :: [Char]
-firstLetter = map head wordList
+firstLetter = map head speller
 
-
-wordListtoString :: [Char] -> [String]
-wordListtoString = map (: [])
+spellertoString :: [Char] -> [String]
+spellertoString = map (: [])
 
 
 charToString :: [String]
-charToString = wordListtoString firstLetter 
+charToString = spellertoString firstLetter 
+
 
 listOfCharsToString :: [[Char]] -> [String]
 listOfCharsToString  [[]] = [""]
 listOfCharsToString  (x:xs) = x : listOfCharsToString xs
 
 
-newWordList :: [String]
-newWordList = listOfCharsToString wordList
+newspeller :: [String]
+newspeller = listOfCharsToString speller
 
 
 combineLists :: [(String, String)]
-combineLists = zip charToString newWordList
+combineLists = zip charToString newspeller
 
+
+
+printList :: Foldable t => t (String, [Char]) -> IO ()
 printList xs = mapM_ (\(a,b) -> do
                           putStr a
-                          putStrLn ( " is for "  ++  b)
+                          putStrLn $  " is for "  ++  b
                           ) xs
 
 main :: IO ()
