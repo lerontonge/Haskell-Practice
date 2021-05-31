@@ -2,7 +2,7 @@ module Speller where
 import Data.List as L ( intercalate )
 
 speller :: [[Char]]
-speller  = ["Apple", "Ball", "Cat", "Duck", "Egg"]
+speller  = ["Apple", "Ball", "Cat", "Duck", "Egg", "giraffe"]
 
 
 firstLetter :: [Char]
