@@ -1,4 +1,8 @@
-module Parser where
+--module Parser where
+module ShowParser (parseShow) where
+import Text.ParserCombinators.Parsec
+import qualified Text.ParserCombinators.Parsec.Token as P 
+import Text.ParserCombinators.Parsec.Language
 
 data PersonRecord = MkPersonRecord {
     name :: String, 
@@ -17,6 +21,20 @@ data Address = MkAddress {
 
 data Label = Green | Red | Blue | Yellow deriving (Show)
 
+--parens = P.parens lexer
+
+xml_header :: [Char]
+xml_header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+
+otag t = "<"++t++">"
+ctag t = "</"++t++">"
+tag t v = concat [otag t,v,ctag t]
+
+
+parseShow :: String -> String
+parseShow = runParser showParser 
+
+
 
 rec1 :: PersonRecord
 rec1 = MkPersonRecord 
@@ -32,7 +50,7 @@ rec2 = MkPersonRecord
     42
     [Blue, Yellow]
 
-    
+
 
 main :: IO ()
 main = putStrLn $ show [rec1, rec2]
