@@ -7,21 +7,21 @@ import Data.Char
 
 shouldcipher :: Char -> Bool
 -- is this a letter to be ciphered?
-shouldcipher c = isLetter(c) && isAscii(c)
+shouldcipher c = isLetter c && isAscii c
 
 
 
 cipherchar :: Int -> Char -> Char
 -- enciphers single char at a time - NO WRAPPING
 cipherchar shift c
- | shouldcipher c = chr(ord(c)+shift)
+ | shouldcipher c = chr(ord c + shift)
  | otherwise      = c
 
 
 
 -- encipher a whole string
 cipher :: Int -> [Char] -> [Char]
-cipher shift plaintext = map (bettercipherchar shift) plaintext
+cipher shift plaintext = map (cipherchar shift) plaintext
 
 
 
@@ -32,7 +32,7 @@ decipher shift ciphertext = cipher (-shift) ciphertext
 
 
 
-wraparound shift c 
+wraparound shift c
 -- should we wrap around the alphabet, if we shift past Z?
  | isLower(c) && ord(c)+shift > ord 'z' = True
  | isUpper(c) && ord(c)+shift > ord 'Z' = True
