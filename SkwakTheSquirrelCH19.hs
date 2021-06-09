@@ -41,7 +41,8 @@ gameLoop (rooms, currentInv) = do
     if playerWon (rooms, currentInv)
     then gameOverRestart
     else do
-            describeWorld currentRoom currentInv possibleCmds takeActionThenLoop
+            describeWorld currentRoom currentInv possibleCmds 
+            takeActionThenLoop
                 currentRoom currentInv possibleCmds rooms
                         
 findRoomWithPlayer :: [Room] -> Maybe Room 
