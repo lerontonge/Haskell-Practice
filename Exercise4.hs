@@ -13,3 +13,6 @@ main = do
     putStrLn "One More? "
     num3 <- pick3Numbers
     putStrLn $ "Your chosen numbers are: " ++ num1 ++ ", " ++ num2 ++ ", and " ++ num3
+
+
+    
