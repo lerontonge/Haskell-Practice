@@ -5,4 +5,4 @@ dupecheck [] = True
 dupecheck (x:xs) = not( x `elem` xs) && dupecheck xs
 
 isIsogram :: String -> Bool
-isIsogram = dupecheck . map toLower 
+isIsogram = dupecheck.map toLower 
