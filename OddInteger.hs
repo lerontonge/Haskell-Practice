@@ -16,7 +16,7 @@ findOdd :: [Int] -> Int
 findOdd xs = oddElement maxOddList
     
         where
-             --Returns the head of the largest list with odd length
+             --Returns the head of the largest list with odd length.
              oddElement x = head x 
              --Returns the largest list of odd length
              maxOddList = maximumBy (comparing length) oddList
