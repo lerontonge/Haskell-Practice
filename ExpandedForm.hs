@@ -1,9 +1,8 @@
 import Numeric ()
 import Data.String ()
 import Numeric.Natural ()
-import Data.Char ( digitToInt )
-import Data.List
-import Data.Maybe ()
+import Data.Char ()
+import Data.List ()
 
 
 digitsToList :: Int -> [Int]
