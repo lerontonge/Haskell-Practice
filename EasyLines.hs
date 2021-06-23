@@ -1,13 +1,15 @@
 module EasyLines where
 
 
+
+--factorial
 factorial :: Integer -> Integer
-factorial 0 = 1
-factorial n = n * factorial (n - 1)
+factorial n = product [1..n]
 
+-- Binomial coefficient formula
 choose :: Integer -> Integer -> Integer
-choose n k = factorial n `div` (factorial k * factorial (n - k))
+choose n k = fromIntegral $ factorial n `div` (factorial k * factorial (n - k))
 
-
-easyLines :: Integer -> Integer
-easyLines n = choose (2*n) n
+-- sum of square of binomial coefficient 
+easyLine :: Integer -> Integer
+easyLine n = choose (2 * n) n
