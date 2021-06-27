@@ -22,3 +22,12 @@ removeDuplicates = removeDupes []
 
 uniqueInOrder xs   =  concatMap removeDuplicates grouplst
         where grouplst = group xs
+
+{- Solutions from Code Wars
+alternateMethod :: Eq a => [a] -> [a]
+alternateMethod  = map head . group        
+
+uniqueInOrder' :: Eq a => [a] -> [a]
+uniqueInOrder' = concatMap nub.group
+
+-}
