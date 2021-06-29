@@ -3,7 +3,7 @@ data Player = Player { team :: String,
                        deriving (Show)
 
 sumPpg :: Player -> Player -> Double
-sumPpg Player{ ppg = x } Player{ppg = y} =  x + y
+sumPpg Player{ppg = x } Player{ppg = y} =  x + y
 
 
 iverson :: Player
