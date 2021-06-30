@@ -32,3 +32,27 @@ splitUp n l
 dataReverse :: [a] -> [a]
 dataReverse xs = concat (reverse (splitUp n xs)) 
             where n = 8
+
+
+{-
+
+
+--ALTERNATE SOLUTIONS 
+
+
+import Data.List.Split (chunksOf)
+
+dataReverse :: [Int] -> [Int]
+dataReverse = concat . reverse . chunksOf 8
+
+
+-----OR---------
+
+
+dataReverse :: [Int] -> [Int]
+dataReverse = concat . reverse . split
+  where
+    split [] = []
+    split xs = take 8 xs : split (drop 8 xs)
+
+-}
