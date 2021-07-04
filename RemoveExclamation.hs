@@ -1,8 +1,8 @@
 import Data.List
 
 hello :: String
-hello = "Hello, Haskell!"
+hello = "Hello, Haskell!!"
 
 
 removeExclamationMarks :: String -> String
-removeExclamationMarks = delete '!'
+removeExclamationMarks = filter (/= '!')
