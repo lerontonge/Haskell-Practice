@@ -17,7 +17,7 @@ Example :
 
 17 * 14 * 17 * 19 = 76874
 -}
-
+ --
 
 result :: [[Int]] -> Int
 result lst = product $ map sum lst 
