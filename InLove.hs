@@ -5,5 +5,4 @@ Write a function that will take the number of petals of each flower and return t
 -}
 
 inlove :: Int -> Int -> Bool
-inlove a b | odd (a + b)    = True 
-           | otherwise      = False 
+inlove a b = odd (a + b)  
