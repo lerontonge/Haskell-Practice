@@ -14,6 +14,8 @@ fizzbuzz(3) -->  ["1", "2", "Fizz"]-}
 fizzbuzz :: Int -> [String]
 
 fizzbuzz x = [ fb x | x <- [1..x]]
+
+
     where fb y
             | y `mod` 3 == 0 && y `mod` 5 == 0 = "FizzBuzz"
             | y `mod` 3  == 0 = "Fizz"

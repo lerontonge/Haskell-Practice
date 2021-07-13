@@ -26,11 +26,7 @@ nb_year(1500000, 2.5, 10000, 2000000) -> 10
 Note:
 Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.-}
 
---percent' n = n `div` 100
 
+nbYear :: Int -> Int -> Int -> Int -> Int
 
-nbYear :: Int -> Double -> Int -> Int
-nbYear p0 percent aug  = popGrow 
-                          where popGrow = p0 + round (percent/100) + aug
-
-
+nbYear p0 percent aug p = 
