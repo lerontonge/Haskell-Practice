@@ -1,6 +1,6 @@
 import Data.List
 
-avg :: [Int] -> Int
-avg l =  sum l `div` length l
+avg :: [Float] -> Float
+avg l =  sum l /  fromIntegral (length l)
 
 
