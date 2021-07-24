@@ -46,7 +46,7 @@ dataReverse :: [Int] -> [Int]
 dataReverse = concat . reverse . chunksOf 8
 
 
------OR---------
+-----OR------
 
 
 dataReverse :: [Int] -> [Int]

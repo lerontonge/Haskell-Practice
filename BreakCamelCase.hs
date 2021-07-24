@@ -1,7 +1,7 @@
-import Data.Char as Char
+import Data.Char as Char ( isUpper )
 import Data.List (intercalate)
 import qualified Data.Text as T
-import Data.Array
+import Data.Array ()
 
 testWords :: [Char]
 testWords = "HelloThereWorldHowAreYouFL"
