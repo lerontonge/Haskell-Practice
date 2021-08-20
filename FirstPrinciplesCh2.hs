@@ -7,3 +7,6 @@ waxOn = x * 5
 y = z + 8
 
 
+triple = waxOn * 3
+
+
