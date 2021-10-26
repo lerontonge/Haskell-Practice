@@ -65,6 +65,9 @@ instance Eq a => Eq (Which a) where
 
 data EitherOr a b = Hello a | Goodbye b 
 instance (Eq a, Eq b) => Eq (EitherOr a b) where 
-    
+    (==) (Hello a) (Hello a') = True
+    (==) (Goodbye b) (Goodbye b') = True 
+    (==) _ _ = False
+
 
 
