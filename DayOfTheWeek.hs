@@ -57,4 +57,14 @@ instance (Eq a, Eq b) => Eq (Tuple a b) where
     (==) (Tuple c d) (Tuple a b) = c == a && d == b 
 
 
+data Which a = ThisOne a | ThatOne a
+instance Eq a => Eq (Which a) where 
+    (==) (ThisOne a) (ThisOne a') = True
+    (==) (ThatOne a) (ThatOne a') = True
+    (==) _ _ = False 
+
+data EitherOr a b = Hello a | Goodbye b 
+instance (Eq a, Eq b) => Eq (EitherOr a b) where 
+    
+
 
