@@ -23,20 +23,17 @@ instance Eq Date where
 
 
 data Identity a = Identity a
-
 instance Eq a => Eq (Identity a) where 
     (==)(Identity v) (Identity v') = v == v'
 
 
 data TisAnInteger = TisAn Integer 
-
 instance Eq TisAnInteger where
-    TisAn x == TisAn y  = True 
+    TisAn x == TisAn x'  = True 
 
 
 
 data TwoIntegers = Two Integer Integer 
-
 instance Eq TwoIntegers where
     Two x y == Two w z = True 
 
@@ -54,7 +51,7 @@ instance Eq a => Eq (Pair a) where
 
 data Tuple a b = Tuple a b 
 instance (Eq a, Eq b) => Eq (Tuple a b) where
-    (==) (Tuple c d) (Tuple a b) = c == a && d == b 
+    (==) (Tuple c d) (Tuple a b) = True -- OR (c == a && d == b) 
 
 
 data Which a = ThisOne a | ThatOne a
@@ -68,6 +65,3 @@ instance (Eq a, Eq b) => Eq (EitherOr a b) where
     (==) (Hello a) (Hello a') = True
     (==) (Goodbye b) (Goodbye b') = True 
     (==) _ _ = False
-
-
-
