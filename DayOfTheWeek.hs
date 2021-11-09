@@ -1,12 +1,13 @@
+import GHC.Real (Fractional)
 
 
 data DayOfWeek = Mon | Tue | Weds | Thu | Fri | Sat | Sun
-    deriving Show 
+    deriving (Eq, Show) 
 
 data Date = Date DayOfWeek Int
     deriving Show
 
-instance Eq DayOfWeek where
+{-instance Eq DayOfWeek where
     (==) Mon Mon    = True 
     (==) Tue Tue    = True 
     (==) Weds Weds  = True 
@@ -14,7 +15,13 @@ instance Eq DayOfWeek where
     (==) Fri Fri    = True 
     (==) Sat Sat    = True 
     (==) Sun Sun    = True
-    (==) _ _        = False 
+    (==) _ _        = False -}
+
+instance Ord DayOfWeek where
+    compare Fri Fri = EQ 
+    compare Fri _   = GT 
+    compare _ Fri   = LT 
+    compare _ _     = EQ
 
 instance Eq Date where
     (==) (Date weekday dayOfMonth)
@@ -65,3 +72,10 @@ instance (Eq a, Eq b) => Eq (EitherOr a b) where
     (==) (Hello a) (Hello a') = True
     (==) (Goodbye b) (Goodbye b') = True 
     (==) _ _ = False
+
+divideThenAdd :: Fractional a => a -> a -> a
+divideThenAdd x y = (x/y) + 1 
+
+subtractThenAdd :: Num a => a -> a -> a
+subtractThenAdd x y = (x-y) + 1 
+
