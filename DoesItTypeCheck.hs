@@ -37,6 +37,9 @@ s1 = Sentence "dogs" "drool"
 s2 :: Sentence
 s2 = Sentence "Julie" "loves" "dogs"
 
+
+------------
+
 data Rocks = 
     Rocks String deriving (Ord, Eq, Show)
 
@@ -49,6 +52,8 @@ data Papu =
 
 
 -- phew = Papu "chases" True 
+
+
 truth = Papu (Rocks "chomskydoz") (Yeah True)
 
 equalityForall :: Papu -> Papu -> Bool 
@@ -92,8 +97,13 @@ mySort = sort
 signifier :: [Char] -> Char
 signifier xs = head (mySort xs)
 
+--signifier :: Ord a => [a] -> a 
 
 
+-- chk :: Eq b => (a -> b) -> a -> b -> Bool 
 
+
+--arith :: Num b => (a -> b) -> Integer -> a -> b 
+--arith = ??? 
 
 
