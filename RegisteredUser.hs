@@ -7,3 +7,4 @@ newtype AccountNumber = AccountNumber Integer
 data User = UnregisteredUser | RegisteredUser Username AccountNumber
 
 
+-- test
