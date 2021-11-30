@@ -45,7 +45,11 @@ addFive'  = \x -> \y -> (if x > y then y else x) + 5
 mous lambda syntax:-} 
 
 
-mflip f = \x -> \y -> f y x dd 
+mflip f = \x -> \y -> f y x dd vjfjfj 
+
+
+
+
 
 
 
