@@ -44,9 +44,9 @@ addFive'  = \x -> \y -> (if x > y then y else x) + 5
 {-c) Rewrite the following so that it doesn’t use anony-
 mous lambda syntax:-} 
 
+mflip f = \x -> \y -> f y x
 
-mflip f = \x -> \y -> f y x dd vjfjfj 
-
+mflip' f y x = f y x 
 
 
 
