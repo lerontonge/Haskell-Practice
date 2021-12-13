@@ -37,3 +37,7 @@ avgGrade x
     |otherwise = 'F'
     where y = x / 100
 
+pal xs
+    | xs == reverse xs = True 
+    | otherwise        = False 
+
