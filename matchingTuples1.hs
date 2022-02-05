@@ -16,7 +16,7 @@ fst3 (x,_,_) = x
 third3 :: (a,b,c) -> c
 third3 (_,_,x) = x
 
-k (x,y) = x
+k (x,y) = x 
 
 k1 = k (4-1,10)
 
